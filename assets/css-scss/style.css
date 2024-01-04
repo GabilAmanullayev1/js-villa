@@ -40,6 +40,44 @@ nav .nav-container .navbar .nav-menu i {
   cursor: pointer;
 }
 
+#modal-container {
+  position: fixed;
+  display: none;
+  justify-content: space-between;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1000;
+}
+#modal-container span {
+  position: absolute;
+  right: 20px;
+  font-size: 80px;
+  cursor: pointer;
+}
+#modal-container .modal-list {
+  margin: 0 auto;
+  width: 80%;
+  padding-top: 100px;
+}
+#modal-container .modal-list li {
+  list-style: none;
+}
+#modal-container .modal-list li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 40px;
+}
+#modal-container .modal-text {
+  margin: 0 auto;
+  width: 80%;
+  padding-top: 100px;
+}
+
 #banner {
   padding-top: 300px;
   padding-bottom: 300px;
@@ -165,8 +203,8 @@ nav .nav-container .navbar .nav-menu i {
   font-weight: 300;
 }
 #carousel #recent {
-  position: absolute;
-  top: 50%;
+  margin-top: -300px;
+  padding-top: 300px;
   width: 100%;
   padding-top: 600px;
   padding-bottom: 100px;
@@ -196,7 +234,21 @@ nav .nav-container .navbar .nav-menu i {
 }
 
 footer {
-  padding-bottom: 100px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   background-color: #1a1a1a;
-  z-index: 10;
+}
+footer .footer {
+  padding-top: 40px;
+  border-top: 0.1px solid rgba(255, 255, 255, 0.5019607843);
+  display: flex;
+  justify-content: space-between;
+}
+footer .footer .footer-text p {
+  color: rgba(255, 255, 255, 0.5019607843);
+}
+footer .footer .footer-icon i {
+  color: rgba(255, 255, 255, 0.5019607843);
+  margin-right: 20px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

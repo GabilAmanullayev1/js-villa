@@ -36,6 +36,8 @@ let arr = []
 let page = 1
 let recBoxs = document.querySelector('.recent-boxs')
 let loadElement = document.querySelector('.load-more')
+let search = document.querySelector('.search-input')
+let searchBtn = document.querySelector('.search-btn')
 function getDataJson() {
     fetch(`http://localhost:3000/services?_page=${page}&_limit=3`)
         .then(response => response.json())
@@ -44,7 +46,7 @@ function getDataJson() {
             data.forEach(element => {
                 recBoxs.innerHTML += `
         <div class="recent-box">
-            <i onclick="addFavorite(${element.id})" class="fa-regular fa-heart"></i>
+            <i onclick="addFavorite(${element.id})" class="fa-regular fa-heart" ></i>
             <div class="recent-image"><img src="${element.images}" alt="Image"></div>
             <div class="rec-box-p">${element.date}</div>
             <div class="rec-box-h2">${element.title}</div>
@@ -61,11 +63,11 @@ function getDataJson() {
         })
         .catch(error => console.error('Error fetching data:', error));
 }
-function boxsDelete(id){
+function boxsDelete(id) {
     axios.delete(`http://localhost:3000/services/${id}`)
     window.location.reload();
 }
-loadElement.addEventListener('click',()=>{
+loadElement.addEventListener('click', () => {
     page++
     getDataJson()
 })
@@ -80,3 +82,33 @@ function addFavorite(id) {
         });
 }
 getDataJson()
+searchBtn.addEventListener('click', function () {
+    recBoxs.innerHTML = '';
+
+    const searchTerm = search.value.trim();
+
+    fetch(`http://localhost:3000/services?title_like=${searchTerm}`)
+        .then(response => response.json())
+        .then(data => {
+            arr.push(data);
+            data.forEach(element => {
+                recBoxs.innerHTML += `
+                <div class="recent-box">
+                <i onclick="addFavorite(${element.id})" class="fa-regular fa-heart" ></i>
+                <div class="recent-image"><img src="${element.images}" alt="Image"></div>
+                <div class="rec-box-p">${element.date}</div>
+                <div class="rec-box-h2">${element.title}</div>
+                <div class = "rec-box-btns">
+                 <button class="delete" onclick="boxsDelete(${element.id})">
+                 <i class="fa-solid fa-trash"></i></button>
+                 <button class = "update"><a href = "./update.html?id=${element.id}" target = "_blank"><i class="fa-solid fa-pencil"></i></a></button>
+                 <button class = "cart"><a href = "./details.html?id=${element.id}"><i class="fa-solid fa-cart-shopping"></i></a></button>
+                </div>
+            </div>
+                `;
+            });
+            search.value=''
+            return arr.flat();
+        })
+        .catch(error => console.error('Error fetching data:', error));
+});

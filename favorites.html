@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    .favorites-container{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        .favorite-box{
+            width: 40%;
+            background-color: aliceblue;
+            padding: 10px;
+            button{
+                cursor: pointer;
+                margin-top: 20px;
+                background-color: red;
+                padding: 10px;
+                border: none;
+                color: aliceblue;
+                border-radius: 30px;
+            }
+        }
+    }
+</style>
+<body>
+    <div class="favorites-container">
+
+    </div>
+    <script src="assets/js/favorites.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>

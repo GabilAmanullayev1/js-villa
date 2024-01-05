@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Element</title>
+   <style>
+    #add1{
+        display: flex;
+        justify-content: center;
+    }
+    #addForm{
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+        align-items: center;
+        background-color:#edeff2;
+        padding: 10px;
+        width: 40%;
+    }
+    input{
+        border: white 1px solid;
+        padding: 10px 25px;
+        width: 300px;
+    }
+    button{
+        border: white 1px solid;
+        padding: 10px 25px;
+        width: 20%;
+        cursor: pointer;
+    }
+   </style>
+</head>
+<body>
+    <section id="add1">
+        <form class="category-form" id="addForm">
+            <div class="imgCont">
+                <img class="modalImage" src="" alt="">
+                <input accept="image/*" type="file" id="imageInput" required>
+            </div>
+            <label for="category">Title</label>
+            <input class="category" type="text" id="category" name="category-name" required>
+            <label for="description">Price</label>
+            <input class="description" type="text" id="description" name="description-name" required>
+            <button class="submit"  id="submit" >Submit</button>
+        </form>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/js/add.js"></script>
+</body>
+</html>

@@ -135,6 +135,18 @@ nav {
         margin: 0 auto;
         width: 80%;
         padding-top: 100px;
+
+        button {
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            color: #e61c5d;
+            margin-right: 30px;
+
+            i {
+                font-size: 30px;
+            }
+        }
     }
 }
 
@@ -308,6 +320,7 @@ nav {
 
         .recent {
             .recent-text {
+
                 width: 70%;
                 margin: 0 auto;
 
@@ -331,7 +344,26 @@ nav {
                 }
             }
 
+            .search-box {
+                input {
+                    border: none;
+                    padding: 5px;
+                }
+
+                button {
+                    border: none;
+                    padding: 5px;
+                    background-color: #e61c5d;
+                    cursor: pointer;
+
+                    i {
+                        color: #fff;
+                    }
+                }
+            }
+
             .recent-boxs {
+                padding-top: 40px;
                 margin: 0 0 20px;
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -431,10 +463,28 @@ nav {
                     background-color: #e61c5d;
                     border-color: #e61c5d;
                     letter-spacing: 3px;
-                    i{
+
+                    i {
                         margin-left: 20px;
                     }
 
+                }
+
+                .add {
+                    padding-left: 30px;
+                    padding-right: 30px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    color: #fff;
+                    background-color: #e61c5d;
+                    border-color: #e61c5d;
+                    letter-spacing: 3px;
+
+                    i {
+                        margin-left: 20px;
+                    }
                 }
             }
         }
@@ -545,10 +595,124 @@ footer {
                         font-size: 16px;
                     }
                 }
-                .recent-boxs{
-                   grid-template-columns: 1fr 1fr;
+
+                .recent-boxs {
+                    grid-template-columns: 1fr 1fr;
+                }
+
+            }
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 778px) {
+    #banner {
+        .banner {
+            .banner-text {
+                margin-bottom: 40px;
+                text-align: center;
+
+                h1 {
+                    font-size: 40px;
+                }
+
+                p {
+                    font-size: 18px;
                 }
             }
+
+            .banner-btn {
+                text-align: center;
+
+                button {
+                    font-size: 14px;
+                }
+
+            }
+        }
+    }
+
+    #about {
+        .about {
+            width: 100%;
+            grid-template-columns: repeat(1, 1fr);
+
+            .about-box {
+
+                .about-image {
+                    max-width: 100%;
+                    img{
+                        width: 100%;
+                    }
+                }
+
+                
+
+                .about-stars {
+                    display: flex;
+                    flex-direction: column;
+    
+                    .about-right {
+                        p {
+                            text-align: left;
+                            color: #adb5bd;
+                            font-size: 16px;
+                        }
+                    }
+    
+                }
+            }
+        }
+    }
+
+    #carousel {
+        .carousel {
+            .carousel-text {
+                margin-bottom: 40px;
+                width: 100%;
+
+                h2 {
+                    font-size: 40px;
+                    text-align: center
+                }
+
+                p {
+                    font-size: 16px;
+                    text-align: left;
+                }
+            }
+        }
+
+        #recent {
+            .recent {
+                .recent-text {
+                    margin-bottom: 30px;
+                    width: 100%;
+
+                }
+
+                .recent-boxs {
+                    grid-template-columns: 1fr ;
+                    .recent-image{
+                        img{
+                            width: 100%;
+                        }
+                    }
+                }
+                .recent-buttons{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 30px;
+
+                }
+            }
+        }
+    }
+    footer{
+        .footer{
+            flex-direction: column;
         }
     }
 

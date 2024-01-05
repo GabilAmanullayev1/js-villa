@@ -63,5 +63,20 @@ function getDataJson() {
 }
 function boxsDelete(id){
     axios.delete(`http://localhost:3000/services/${id}`)
+    window.location.reload();
+}
+loadElement.addEventListener('click',()=>{
+    page++
+    getDataJson()
+})
+function addFavorite(id) {
+    axios.get(`http://localhost:3000/favorites?serviceId=${id}`)
+        .then(response => {
+            axios.get(`http://localhost:3000/services/${id}`)
+                .then(response => {
+                    axios.post("http://localhost:3000/favorites", response.data);
+                });
+
+        });
 }
 getDataJson()

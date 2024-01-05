@@ -265,6 +265,7 @@ nav .nav-container .navbar .nav-menu i {
   font-weight: 300;
 }
 #carousel #recent .recent .recent-boxs {
+  margin: 0 0 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
@@ -335,6 +336,21 @@ nav .nav-container .navbar .nav-menu i {
 #carousel #recent .recent .recent-boxs .recent-box .rec-box-btns .cart i {
   color: #e61c5d;
   font-size: 20px;
+}
+#carousel #recent .recent .recent-buttons .load-more {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  color: #fff;
+  background-color: #e61c5d;
+  border-color: #e61c5d;
+  letter-spacing: 3px;
+}
+#carousel #recent .recent .recent-buttons .load-more i {
+  margin-left: 20px;
 }
 
 footer {
@@ -409,5 +425,8 @@ footer .footer .footer-icon i {
   }
   #carousel #recent .recent .recent-text p {
     font-size: 16px;
+  }
+  #carousel #recent .recent .recent-boxs {
+    grid-template-columns: 1fr 1fr;
   }
 }/*# sourceMappingURL=style.css.map */
